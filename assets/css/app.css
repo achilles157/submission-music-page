@@ -11,6 +11,46 @@ body {
   flex-direction: column;
 }
 
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  margin-top: 60px;
+}
+
+#home .ft-img {
+  width: 80%;
+  max-height: 400px;
+  object-fit: cover;
+  object-position: 20% 80%;
+}
+
+.home-section, .about-section, .music-section, .contact-section {
+  width: 100%;
+  padding: 60px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ccc;
+}
+
+.home-section {
+  background-color: #f2f2f2;
+}
+
+.about-section {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #e6e6e6;
+}
+
+.music-section {
+  background-color: #d9d9d9;
+}
+
+.contact-section {
+  background-color: #c2c2c2;
+}
+
 .navbar-container {
   width: 100%;
   max-width: 1600px;
@@ -76,24 +116,75 @@ body {
   color: white;
 }
 
-main {
-  flex: 1;
-  width: 100%;
-  max-width: 1200px;
-  margin-inline: auto;
-  padding: 3rem 4rem 2rem; /* Add more padding to the top */
-  display: flex;
-  align-items: center;
-}
-
 article {
   flex: 1;
   padding: 2rem;
 }
 
+/* Tambahkan CSS berikut untuk membuat konten samping berada di samping kanan */
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  justify-content: space-between;
+}
+
+#article-container {
+  flex: 1;
+}
+
+.sidebar {
+  flex: 0 0 300px; /* adjust the width to your liking */
+  padding: 20px;
+  margin-left: auto;
+  max-width: 300px; /* add this to set a maximum width */
+}
+
+.aside-container {
+  flex: 0 0 300px; /* adjust the width to your liking */
+  padding: 20px;
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Ubah CSS berikut untuk membuat aside berada di samping kanan */
+
 aside {
   flex: 1;
   padding: 2rem;
+  margin-left: 20px;
+}
+
+/* Ubah CSS berikut untuk membuat artikel dan aside memiliki lebar yang sama */
+
+article, aside {
+  flex: 1;
+  padding: 2rem;
+}
+
+/* Tambahkan CSS berikut untuk membuat konten samping memiliki latar belakang yang berbeda */
+
+.aside-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f2f2f2;
+  padding: 20px;
+  border: 1px solid #ccc;
+}
+
+.profile-picture {
+  width: 200px;
+  height: 200px;
+  border-radius: 10%;
+  margin: 0 auto 20px -50px;
+}
+.aside-container .profile-picture {
+  margin: 0; /* remove the margin bottom */
+  align-self: flex-start; /* add this to align the image to the top */
 }
 
 footer {
@@ -139,11 +230,13 @@ footer {
   }
   .navbar-container {
     padding-block: 0.5rem;
+    top: 0;
   }
   .nav-list ul {
     gap: 1rem;
   }
   main {
+    margin-top: 60px;
     padding: 1rem;
   }
   article {
@@ -164,7 +257,7 @@ footer {
   position: absolute;
   top: 100%;
   left: 0;
-  background-color: #f9f9f9;  
+  background-color: #83a6c1;  
   border: 1px solid #ccc;
   padding: 10px;
   z-index: 9999;
