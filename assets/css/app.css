@@ -1,0 +1,208 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Quicksand', sans-serif;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar-container {
+  width: 100%;
+  max-width: 1600px;
+  padding-block: 1rem;
+  margin-inline: auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 9999;
+  background-color: #2b2b73;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.logo img {
+  margin: 0 auto;
+  width: 150px;
+  height: 50px;
+  object-fit: cover;
+}
+
+.nav-link, .dropdown-button {
+  display: inline-block; /* make both nav links and dropdown button inline */
+  padding: 10px 15px; /* add some padding to both */
+  font-size: 16px; /* set font size to match other nav links */
+  text-decoration: none; /* remove underline */
+  color: #333; /* set text color*/
+}
+
+.nav-list {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.nav-list ul {
+  padding-left: 0;
+  display: flex;
+  justify-content: center;
+  gap: 2rem 1rem;
+}
+
+.nav-list li {
+  display: inline-block; /* make all list items inline */
+  margin-right: 20px; /* add some space between list items */
+}
+
+.nav-list li a {
+  padding: 0.5rem 1.5rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: white;
+  transition: all 0.2s ease-in-out;
+}
+
+.nav-list li:hover a {
+  background-color: #425c77;
+  color: white;
+}
+
+main {
+  flex: 1;
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding: 3rem 4rem 2rem; /* Add more padding to the top */
+  display: flex;
+  align-items: center;
+}
+
+article {
+  flex: 1;
+  padding: 2rem;
+}
+
+aside {
+  flex: 1;
+  padding: 2rem;
+}
+
+footer {
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding: 1rem 2rem;
+  text-align: center;
+}
+
+/* Media Queries */
+
+/* Medium devices (768px and below) */
+@media screen and (max-width: 768px) {
+  .logo img {
+    width: 100px;
+    height: 30px;
+  }
+  .navbar-container {
+    flex-direction: column;
+  }
+  .nav-list ul {
+    flex-wrap: wrap;
+    column-gap: 0.5rem;
+  }
+  main {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  article {
+    padding: 1rem;
+  }
+  aside {
+    padding: 1rem;
+  }
+}
+
+/* Small devices (480px and below) */
+@media screen and (max-width: 480px) {
+  .logo img {
+    width: 80px;
+    height: 20px;
+  }
+  .navbar-container {
+    padding-block: 0.5rem;
+  }
+  .nav-list ul {
+    gap: 1rem;
+  }
+  main {
+    padding: 1rem;
+  }
+  article {
+    padding: 0.5rem;
+  }
+  aside {
+    padding: 0.5rem;
+  }
+}
+
+.dropdown {
+  position: relative;
+  margin-right: 0;
+}
+
+.dropdown-list {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #f9f9f9;  
+  border: 1px solid #ccc;
+  padding: 10px;
+  z-index: 9999;
+  border-radius: 10px;
+}
+
+.dropdown-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: block; /* Change this to block to display the list vertically */
+}
+
+.dropdown-list li {
+  display: block;
+  margin-bottom: 10px; /* Add this to add space between list items */
+}
+
+.dropdown-list a {
+  display: block; /* Change this to block to display links vertically */
+  padding: 10px;
+  text-decoration: none;
+  color: #333;
+}
+
+.dropdown-list.show {
+  display: block;
+}
+
+.dropdown-button {
+  padding: 0.5rem 1.5rem;
+  border-radius: 999px;
+  background-color: #425c77;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown-button:hover {
+  background-color: #2d3e50;
+}
